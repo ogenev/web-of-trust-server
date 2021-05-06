@@ -20,7 +20,7 @@
     over-ride Profile, CertClass and CertInfo.
 """
 
-from certs import Certifications
+from pymmetry.certs import Certifications
 
 
 class Profile:

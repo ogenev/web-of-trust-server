@@ -1,4 +1,4 @@
-from certs import CertInfoBase
+from pymmetry.certs import CertInfoBase
 
 
 class CertInfo(CertInfoBase):

@@ -36,8 +36,8 @@
 
 """
 
-from net_flow import NetFlow, Debug
-from cert_info import CertInfo
+from pymmetry.net_flow import NetFlow, Debug
+from pymmetry.cert_info import CertInfo
 
 # No profile can have a profile name of None: this is reserved
 # as the SUPERSINK.
@@ -299,8 +299,8 @@ def test():
     p.add_profile("mark")
 
     p.add_cert("bob", "like", "anna", 'best')
-    p.add_cert("ogi", 'like', 'mark', 'best')
-    p.add_cert("mark", 'like', 'bob', 'good')
+    p.add_cert("ogi", 'like', 'mark', 'good')
+    p.add_cert("mark", 'like', 'bob', 'best')
 
     # p.add_cert('luke', 'like', 'heather', 'best')
     #
@@ -327,7 +327,7 @@ def test():
     # p.add_cert(10, 'hate', 55, 'looks CAN kill')
 
     t = TrustMetric(CertInfo(), p)
-    r = t.tmetric_calc('like', ['anna'])
+    r = t.tmetric_calc('like', ['ogi'])
     pprint(r)
 
     # r = t.tmetric_calc('like', ['heather'])
