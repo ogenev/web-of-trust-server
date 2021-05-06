@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from db.qldb import QldbQuery
+
 app = FastAPI()
 
 
@@ -22,4 +24,7 @@ def get_trust(request: TrustRequest):
     3. Run algorithm
     4. Return results
     """
+    trust_records = QldbQuery.call()
+    print(trust_records)
+
     return {"trust_source": request.source, "trust_destination": request.destination}
